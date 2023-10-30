@@ -1,0 +1,22 @@
+name: Generate Countries Markdown
+
+on: push
+
+
+jobs:
+  generate-markdown:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Generate Markdown file
+        id: generate-markdown
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+      - run: npm install @actions/core
+      - run: node generate-markdown.js
+        with:
+          file-name: 'countries.md'
+          countries: '[{"name": "Country1", "states": ["State1", "State2"]}, {"name": "Country2", "states": ["State3", "State4"]}]'
