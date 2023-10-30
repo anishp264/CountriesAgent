@@ -17,6 +17,3 @@ jobs:
           node-version: 14
       - run: npm install @actions/core
       - run: node generate-markdown.js
-        with:
-          file-name: 'countries.md'
-          countries: '[{"name": "Country1", "states": ["State1", "State2"]}, {"name": "Country2", "states": ["State3", "State4"]}]'

@@ -18,8 +18,9 @@ function createMarkdownFile(markdownContent, fileName) {
 
 try {
     // Get input parameters from GitHub Actions
-    const countries = JSON.parse(core.getInput('countries'));
-    const fileName = core.getInput('file-name');
+    const countries = '[{"name": "Country1", "states": ["State1", "State2"]}, {"name": "Country2", "states": ["State3", "State4"]}]';
+    const fileName = 'countries.md';
+    //core.getInput('file-name');
 
     // Generate Markdown content
     const markdownContent = generateMarkdown(countries);
